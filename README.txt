@@ -1,1 +1,5 @@
-Notes app — minimal + iPhone-like. Open index.html. Features: localStorage, delete, theme toggle, autosave, export/import, animations.
+# Notes app
+
+## Доступен под все устройства
+
+![Desktopn screen](./01.png)
