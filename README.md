@@ -2,4 +2,4 @@
 
 ## Доступен под все устройства
 
-![Desktopn screen](./01.png)
+![Desktopn screen](01.png)
