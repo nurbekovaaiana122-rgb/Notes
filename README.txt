@@ -1,0 +1,1 @@
+Notes app — minimal + iPhone-like. Open index.html. Features: localStorage, delete, theme toggle, autosave, export/import, animations.

@@ -1,0 +1,81 @@
+:root{
+  --bg:#f7f7f8;
+  --panel:#ffffff;
+  --muted:#8b8b93;
+  --accent:#007aff;
+  --danger:#ff3b30;
+  --shadow: 0 8px 30px rgba(13,26,38,0.08);
+  --radius:14px;
+  --glass: rgba(255,255,255,0.6);
+}
+*{
+  box-sizing:border-box
+}
+html,body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  color:#111;
+  font-family:Inter,Segoe UI,Roboto,Helvetica,Arial
+}
+.app{
+  max-width:1100px;
+  margin:28px auto;
+  padding:18px;
+  background:linear-gradient(180deg,var(--bg),#fff);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(0,0,0,0.04)
+}
+header{
+  display:flex;
+  align-items:center;justify-content:space-between;padding:6px 12px}
+header h1{
+  margin:0;font-size:20px;font-weight:700}
+.controls{
+  display:flex;gap:8px;align-items:center}
+.controls button{
+  background:var(--panel);border:1px solid rgba(0,0,0,0.06);padding:8px 10px;border-radius:10px;cursor:pointer}
+.controls button:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+main{display:flex;gap:18px;padding:12px}
+.sidebar{width:340px;max-height:64vh;overflow:auto;padding:10px;border-radius:12px}
+.search-wrap{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+#search{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06)}
+#newBtn{width:44px;height:44px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-size:22px;cursor:pointer}
+
+.notes-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.note-item{display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:12px;background:var(--panel);border:1px solid rgba(0,0,0,0.03);cursor:pointer;transition:transform .12s,box-shadow .12s}
+.note-item:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.note-title{font-weight:700;font-size:14px}
+.note-snippet{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.note-meta{font-size:11px;color:#999;margin-top:6px}
+
+/* Editor */
+.editor{flex:1;display:flex;flex-direction:column;gap:10px;max-height:64vh}
+#noteTitle{padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);font-size:18px}
+#noteBody{flex:1;padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);resize:none;font-size:15px;line-height:1.6;background:var(--panel)}
+.editor-actions{display:flex;align-items:center;gap:10px;padding-top:6px}
+button{padding:10px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:var(--panel);cursor:pointer}
+button:hover{transform:translateY(-2px)}
+button.danger{border-color: rgba(255,59,48,0.12);color:var(--danger)}
+.spacer{flex:1}
+.toggle{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.toggle input{width:16px;height:16px}
+
+/* Footer */
+footer{padding:10px 12px;color:var(--muted);font-size:13px;text-align:center}
+
+/* Animations */
+.fade-in{animation:fade .28s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Dark theme */
+.dark{--bg:#0f1720;--panel:#0b1220;--muted:#9aa4b2;color:#e6eef6}
+.dark .app{background:linear-gradient(180deg,var(--bg),#07111a)}
+.dark header, .dark .controls button, .dark #search, .dark #newBtn{background:var(--panel);border:1px solid rgba(255,255,255,0.04)}
+.dark .note-item{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.015));border:1px solid rgba(255,255,255,0.03)}
+.dark .editor-actions button{background:var(--panel)}
+
+/* Responsive */
+@media (max-width:920px){main{flex-direction:column}.sidebar{width:100%;max-height:220px;order:2}.editor{order:1}}
